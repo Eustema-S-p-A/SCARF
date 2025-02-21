@@ -1,0 +1,6 @@
+*api_key.txt
+dataset/*
+!dataset/.gitkeep
+venv*
+results/
+__pycache__
