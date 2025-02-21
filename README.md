@@ -25,12 +25,14 @@ SCARF (System for Comprehensive Assessment of RAG Frameworks) is a modular and f
 
 ### Setup
 
- 1. Clone the repository: `git clone https://github.com/your-repo/scarf.git && cd scarf`
- 2. Install dependencies: `pip install -r requirements.txt`
+ 1. Clone the repository and navigate to the project directory: `git clone https://github.com/your-repo/scarf.git && cd scarf`
+ 2. (Optional) Set up the RAG framework components locally for testing: You can find example Dockerfiles for each component in the corresponding subfolders.
+ 3. Navigate to the SCARF framework-test folder: `cd frameworks-test/eus/`
+ 4. Install dependencies: ` cd pip install -r requirements.txt`
 
 ### Usage
  1. Configure SCARF for your needs through `config.json`
- 2. Start SCARF `python main.py `
+ 2. Start SCARF `python test_rag_frameworks.py `
 
 ## Contributing
 Contributions are welcome! Please submit issues or pull requests.
