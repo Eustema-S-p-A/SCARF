@@ -21,7 +21,7 @@ SCARF (System for Comprehensive Assessment of RAG Frameworks) is a modular and f
 
 - Python 3.8+
 - pip
-- Docker (optional, for containerized deployment)
+- Docker (optional, for containerized deployment of RAG frameworks)
 
 ### Setup
 
