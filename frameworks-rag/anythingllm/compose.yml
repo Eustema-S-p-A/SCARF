@@ -1,0 +1,21 @@
+services:
+  anythingllm:
+    image: mintplexlabs/anythingllm:1.2.1
+    container_name: anythingllm
+    ports:
+    - "${ANYTHINGLLM_PORT:-3001}:3001"
+    cap_add:
+      - SYS_ADMIN
+    environment:
+      - STORAGE_LOCATION=${ANYTHINGLLM_STORAGE_LOCATION:-./data/anythingllm}
+      - STORAGE_DIR=/app/server/storage
+      - DISABLE_TELEMETRY=${ANYTHINGLLM_DISABLE_TELEMETRY-:false}
+    volumes:
+      - ${ANYTHINGLLM_STORAGE_LOCATION:-./data/anythingllm}:/app/server/storage
+      - ${ANYTHINGLLM_STORAGE_LOCATION:-./data/anythingllm}/.env:/app/server/.env
+#      - ./data/anythingllm/collector/hotdir/:/app/collector/hotdir
+#      - ./data/anythingllm/collector/outputs/:/app/collector/outputs
+    restart: always
+
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

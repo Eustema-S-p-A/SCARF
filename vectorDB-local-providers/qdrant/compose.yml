@@ -1,0 +1,15 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.10.1
+    container_name: qdrant
+    environment:
+      LOG_LEVEL: ${LOG_LEVEL:-WARNING}
+    ports:
+      - ${QDRANT_PORT:-6333}:${QDRANT_PORT:-6333}
+    volumes:
+      - ${QDRANT_STORAGE_PATH:-./data/qdrant/storage}:/qdrant/storage
+    restart: unless-stopped
+
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+

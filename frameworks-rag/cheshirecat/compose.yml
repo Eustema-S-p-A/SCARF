@@ -1,0 +1,32 @@
+services:
+  cheshire-cat-core:
+    image: ghcr.io/cheshire-cat-ai/core:1.7.1
+    container_name: cheshire_cat_core
+    environment:
+      PYTHONUNBUFFERED: "1"
+      WATCHFILES_FORCE_POLLING: "true"
+      CORE_HOST: ${CORE_HOST:-localhost}
+      CORE_PORT: ${CORE_PORT:-1865}
+      CORE_USE_SECURE_PROTOCOLS: ${CORE_USE_SECURE_PROTOCOLS:-false}
+      LOG_LEVEL: ${LOG_LEVEL:-WARNING}
+      DEBUG: ${DEBUG:-false}
+      TZ: ${CORE_TIMEZONE:-UTC}
+      API_KEY: ${API_KEY:-}
+      SAVE_MEMORY_SNAPSHOTS: ${SAVE_MEMORY_SNAPSHOTS:-false}
+      QDRANT_HOST: ${QDRANT_HOST:-host.docker.internal}
+      QDRANT_PORT: ${QDRANT_PORT:-6333}
+      # Comment CCAT_API_KEY* to disable api and ws auth
+      CCAT_API_KEY: ${CCAT_API_KEY:-}
+      CCAT_API_KEY_WS: ${CCAT_API_KEY_WS:-}
+    ports:
+      - "${CORE_PORT:-1865}:80"
+    volumes:
+      - ${CORE_STORAGE_PATH:-./cat}/plugins:/app/cat/plugins}
+      - ${CORE_STORAGE_PATH:-./cat}/data:/app/cat/data}
+      - ${CORE_STORAGE_PATH:-./cat}/static:/app/cat/static}
+    restart: unless-stopped
+
+    # This add an entry to /etc/hosts file in the container mapping host.docker.internal to the host machine IP addr, allowing the container to access services running on the host, not only on Win and Mac but also Linux.
+    # See https://docs.docker.com/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host and https://docs.docker.com/reference/cli/docker/container/run/#add-host
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

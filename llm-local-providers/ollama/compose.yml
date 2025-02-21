@@ -1,0 +1,30 @@
+services:
+  ollama:
+    image: ollama/ollama:0.3.10
+    container_name: ollama
+    environment:
+      OLLAMA_HOST: "${OLLAMA_HOST:-127.0.0.1}:${OLLAMA_PORT-11434}"
+      OLLAMA_DEBUG: ${OLLAMA_DEBUG:-"false"}
+      OLLAMA_NOHISTORY: ${OLLAMA_NOHISTORY:-"false"}
+      OLLAMA_FLASH_ATTENTION: ${OLLAMA_FLASH_ATTENTION:-0}
+      OLLAMA_KEEP_ALIVE: ${OLLAMA_KEEP_ALIVE:-"5m"}
+      OLLAMA_MAX_LOADED_MODELS: ${OLLAMA_MAX_LOADED_MODELS:-0}
+      OLLAMA_NUM_PARALLEL: ${OLLAMA_NUM_PARALLEL:-0}
+      OLLAMA_MAX_QUEUE: ${OLLAMA_MAX_QUEUE:-512}
+      OLLAMA_SCHED_SPREAD: ${OLLAMA_SCHED_SPREAD:-0}
+    ports:
+      - ${OLLAMA_PORT:-11434}:${OLLAMA_PORT:-11434}
+    volumes:
+      - ${OLLAMA_STORAGE_PATH:-./data/ollama}:/root/.ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [ gpu ]
+    restart: unless-stopped
+
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
