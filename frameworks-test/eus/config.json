@@ -1,0 +1,81 @@
+{
+    "cheshirecat": {
+        "base_url": "XXXXXXXXXXXXXXXXXXXXXXXXXX:1865",
+        "api_key_file_path": "./cheshirecat_api_key.txt",
+        "username": "user",
+        "password": "user"
+    },
+    "anythingllm": {
+        "base_url": "XXXXXXXXXXXXXXXXXXXXXXXXXX:3001",
+        "api_key_file_path": "./anythingllm_api_key.txt",
+        "workspace_slug": "test"
+    },
+    "evaluator": {
+        "base_url": "XXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "api_key_file_path": "./evaluator_api_key.txt"
+    },
+    "dataset": {
+        "path": "./dataset",
+        "file_names": [
+            "test1.pdf",
+            "test2.pdf",
+            "test3.pdf",
+            "test4.md",
+            "README.md"
+        ],
+        "generic_questions": [
+            "What is the main objective of this system?",
+            "How does the AI framework handle user queries?",
+            "Please provide a brief overview of the architecture."
+        ],
+        "generic_expected_responses": [
+            "I am an AI agent that help you",
+            "It is implementig a RAG system",
+            "It has 3 types of memories"], 
+            
+        "file_specific_questions": {
+            "README.md":[
+                "What is the purpose of this uploaded README document?",
+                "Describe the details inside and explain them one by one."
+            ],
+            "test1.pdf": [
+                "What is the introduction about?",
+                "What are the main findings?"
+            ],
+            "test2.pdf": [
+                "What is the methodology used?",
+                "What are the results?"
+            ],
+            "test3.pdf": [
+                "What is the conclusion?",
+                "What are the recommendations?"
+            ],
+            "test4.md": [
+                "What is the purpose of this document?",
+                "Describe the implementation details."
+            ]
+        }, 
+        "file_expected_responses": {
+            "README.md":[
+                "It is a README file",
+                "It describe SCARF"
+            ],
+            "test1.pdf": [
+                "about life?",
+                "The main finding is that life is beautiful"
+            ],
+            "test2.pdf": [
+                "The methodology used is RAG",
+                "the results are quite good"
+            ],
+            "test3.pdf": [
+                "that rag is good",
+                "the recommendation is to use rag"
+            ],
+            "test4.md": [
+                "Talk about LLMS",
+                "It uses langhchain."
+            ]
+        }
+    }
+}
