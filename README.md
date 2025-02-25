@@ -2,7 +2,9 @@
 
 [![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
 
-<img src="assets/SCARF_logo.png" alt="SCARF Logo" width="200">
+<div align="center">
+  <img src="assets/SCARF_logo.png" alt="SCARF Logo" width="200">
+</div>
 
 
 ## Overview
