@@ -1,8 +1,10 @@
 # SCARF: System for Comprehensive Assessment of RAG Frameworks
 
-[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
-
 <div align="center">
+  <a href="http://www.gnu.org/licenses/agpl-3.0">
+    <img src="https://img.shields.io/badge/license-AGPL-blue.svg" alt="AGPL License">
+  </a>
+  <br>
   <img src="assets/SCARF_logo.png" alt="SCARF Logo" width="200">
 </div>
 
