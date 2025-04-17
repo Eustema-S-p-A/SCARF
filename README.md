@@ -1,14 +1,15 @@
 # SCARF: System for Comprehensive Assessment of RAG Frameworks
 
+
 <div align="center">
   <img src="assets/SCARF_logo.png" alt="SCARF Logo" width="200">
   <br>
   <a href="http://www.gnu.org/licenses/agpl-3.0">
     <img src="https://img.shields.io/badge/license-AGPL-blue.svg" alt="AGPL License">
   </a>
-  <a href="https://arxiv.org/">
-    <img src="https://img.shields.io/badge/Technical-Report-blue" alt="Technical Report">
-  </a>
+  <a href="https://arxiv.org/abs/2504.07803"> 
+    <img src="https://img.shields.io/badge/Technical%20Report-arXiv%3A2504.07803-b31b1b" alt="arXiv Report"> 
+  </a> 
 </div>
 
 
@@ -50,3 +51,23 @@ For questions or support, reach out via GitHub Issues.
 
 ## Authors ✍️
 [m.rengo], [s.beadini], [d.alfano], [r.abbruzzese] @ Eustema SpA, Italy
+
+## Citation 📚  
+If you use SCARF in your research or applications, please cite our technical report:
+
+```bibtex
+@techreport{SCARF,
+  author = {Rengo M. , Beadini S. , Alfano, D. , Abbruzzese R.},
+  title = {A System for Comprehensive Assessment of RAG Frameworks},
+  institution = {Eustema SpA},
+  month = {4},
+  year = {2025},
+  url = {https://arxiv.org/abs/2504.07803},
+  eprint = {2504.07803},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  doi = {10.48550/arXiv.2504.07803},
+  note = {Technical Report}
+}
+```
+
