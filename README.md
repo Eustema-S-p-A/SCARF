@@ -57,15 +57,15 @@ If you use SCARF in your research or applications, please cite our technical rep
 
 ```bibtex
 @techreport{SCARF,
-  author = {Rengo M. , Beadini S. , Alfano, D. , Abbruzzese R.},
-  title = {A System for Comprehensive Assessment of RAG Frameworks},
+  title={A System for Comprehensive Assessment of RAG Frameworks}, 
+  author={Mattia Rengo and Senad Beadini and Domenico Alfano and Roberto Abbruzzese},
   institution = {Eustema SpA},
   month = {4},
   year = {2025},
-  url = {https://arxiv.org/abs/2504.07803},
   eprint = {2504.07803},
   archivePrefix = {arXiv},
   primaryClass = {cs.CL},
+  url = {https://arxiv.org/abs/2504.07803},
   doi = {10.48550/arXiv.2504.07803},
   note = {Technical Report}
 }
